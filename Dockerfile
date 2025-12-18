@@ -7,7 +7,7 @@ COPY . .
 RUN ./gradlew clean build --no-daemon
 
 # Run stage
-FROM eclipse-temurin:21.0.9_10-jre
+FROM eclipse-temurin:25.0.1_8-jre
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
